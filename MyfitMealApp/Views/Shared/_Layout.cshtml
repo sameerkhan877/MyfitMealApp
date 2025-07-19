@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyFitMealApp</title>
+
+    <!-- ✅ Bootstrap (don't remove) -->
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <!-- ✅ Custom site-wide styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyFitMealApp.styles.css" asp-append-version="true" />
+
+    <!-- ✅ External Swiper CSS from original UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- ✅ Tailwind compiled file (output.css) -->
+    <link href="~/css/output.css" rel="stylesheet" />
+    <!-- ✅ Optional: You can add favicon or fonts here -->
+</head>
+<body class="bg-gradient-to-br from-purple-100 via-pink-100 to-white">
+ 
+    <!-- ✅ Converted Tailwind Navbar (copied from my VS Code) -->
+    <header class="absolute inset-x-0 top-0 z-50 shadow-sm">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5 text-2Sxl font-bold text-greenish">MyFitMeal</a>
+            </div>
+            <div class="flex lg:hidden">
+                <button onclick="toggleMobileMenu()" type="button"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 transition">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#" class="text-sm font-semibold text-black hover:text-greenish transition">Home</a>
+                <a href="#" class="text-sm font-semibold text-black hover:text-greenish transition">Features</a>
+                <a href="#" class="text-sm font-semibold text-black hover:text-greenish transition">Profile</a>
+                @* <a href="#" class="text-sm font-semibold text-white hover:text-greenish transition">Company</a> *@
+
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="#" class="text-sm font-semibold text-black hover:text-greenish transition">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu"
+             class="lg:hidden hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm">
+            <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5 text-xl font-bold text-greenish">MyFitMeal</a>
+                <button onclick="toggleMobileMenu()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6">
+                <nav class="space-y-2">
+                    <a  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-greenish transition">Home</a>
+                    <a  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-greenish transition">Features</a>
+                    <a class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-greenish transition">Profile</a>
+                    @* <a  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-greenish transition">Company</a> *@
+                </nav>
+                <div class="mt-6">
+                    <a href="#" class="block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-greenish transition">Log in</a>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- ✅ Render the page body -->
+    <main role="main" class="pb-3 pt-24">
+        <!-- pt-24 to push content below navbar -->
+        @RenderBody()
+    </main>
+
+    <!-- ✅ Footer -->
+    @* <footer class="border-t mt-8 text-center text-muted">
+        <div class="container py-3">
+            &copy; 2025 - MyfitMealApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <!-- ✅ Bootstrap and jQuery scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- ✅ Swiper and GSAP from original UI -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- ✅ Mobile toggle script -->
+    <script defer>
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        }
+    </script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

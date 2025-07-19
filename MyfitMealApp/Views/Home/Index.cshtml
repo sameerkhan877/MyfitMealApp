@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<section class="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-white flex items-start justify-center p-28 px-6">
+    <!-- Custom Cursor -->
+    <div id="cursor" class="hidden lg:block fixed top-0 left-0 w-6 h-6 rounded-full bg-gray-50 pointer-events-none mix-blend-difference z-[9999]"></div>
+    <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+        <!-- Left: Hero Text gray-900-->
+        <div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-black">
+                Wellness,<br />made personal.
+            </h1>
+        </div>
+
+        <!-- Right: Description + Button -->
+        <div class="flex flex-col gap-6">
+            <p class="text-greenish text-lg sm:text-xl font-bold">
+                MyFitMeal is your personalized fitness & meal planning toolkit,<br />
+                focused entirely on your health journey.
+            </p>
+
+            <!-- Fancy Button -->
+            <div class="relative inline-block group w-max">
+                <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-75 group-hover:opacity-100 transition"></div>
+                <a href="#"
+                   class="relative inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-sm font-semibold rounded-full">
+                    Get started for free
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 4.5v15m7.5-7.5H4.5" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Subtext -->
+            <p class="text-sm text-gray-500">Requires modern browser or latest device</p>
+        </div>
+        
+    </div>
+
+</section>
